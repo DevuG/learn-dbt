@@ -1,0 +1,62 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: customer
+    description: "total purchses in snowflakes db"
+    columns:
+      - name: c_custkey
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: cumulative_orders_by_date
+    description: "total orders on each day"
+    columns:
+      - name: o_orderdate
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: total_price
+        description: "The primary key for this table"
+        tests:
+          - not_null
+
+  - name: incremental_load
+    description: "incremental"
+    columns:
+      - name: D_DATE_SK
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: D_DATE_ID
+        description: "The primary key for this table"
+        tests:
+          - not_null
+      - name:  D_DATE
+        description: "The primary key for this table"
+        tests:
+          - not_null
+             
+
