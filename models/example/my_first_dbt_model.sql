@@ -6,6 +6,7 @@
 
     Try changing "table" to "view" below
 */
+/* schema and database also can be provided*/
 
 {{ config(materialized='table') }}
 
@@ -14,10 +15,13 @@ with source_data as (
     select 1 as id
     union all
     select null as id
+    union all
+    select 3 as id
+
 
 )
 
-select *
+select *, {{ var('first_var') }} as first_variable
 from source_data
 
 /*

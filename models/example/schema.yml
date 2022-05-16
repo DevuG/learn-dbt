@@ -10,6 +10,7 @@ models:
         tests:
           - unique
           - not_null
+           
 
   - name: my_second_dbt_model
     description: "A starter dbt model"
@@ -19,6 +20,9 @@ models:
         tests:
           - unique
           - not_null
+          - relationship:
+              to: ref('my_first_dbt_model')
+              field: id
 
   - name: customer
     description: "total purchses in snowflakes db"
@@ -58,5 +62,13 @@ models:
         description: "The primary key for this table"
         tests:
           - not_null
-             
 
+  - name: incremental_time
+    description: "incremental"
+    columns:
+      - name: T_TIME_SK
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      
