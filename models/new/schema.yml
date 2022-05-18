@@ -1,0 +1,14 @@
+
+version: 2
+
+models:
+  - name: customer
+    description: "total purchses in snowflakes db"
+    columns:
+      - name: c_custkey
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+ 
